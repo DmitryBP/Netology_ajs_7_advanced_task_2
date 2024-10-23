@@ -119,8 +119,10 @@ describe("Функция валидатор", () => {
 
 describe("Phones cleaner", () => {
   test("Номер должен приводиться к установленному формату", () => {
-    expect(Phonecontrol.clean("8 (927) 000-00-00")).toBe("+79600000000");
-    expect(Phonecontrol.clean("+7 960 000 00 00")).toBe("+79270000000");
-    expect(Phonecontrol.clean("+86 000 000 0000")).toBe("+860000000000");
+    expect(Phonecontrol.phoneClear("+7 960 000 00 00")).toBe("+79600000000");
+    expect(Phonecontrol.phoneClear("+86 000 000 0000")).toBe("+860000000000");
+  });
+  test("8-ку меняет на +7", () => {
+    expect(Phonecontrol.phoneClear("8 (927) 000-00-00")).toBe("+79270000000");
   });
 });
