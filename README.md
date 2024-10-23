@@ -1,0 +1,1 @@
+# Netology_ajs_7_advanced_task_2
